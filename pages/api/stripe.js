@@ -11,15 +11,15 @@ export default async function handler(req, res) {
         payment_method_types: ['card'],
         billing_address_collection: 'auto',
         shipping_options: [
-          { shipping_rate: 'shr_1MC3PJSFYLVvKcyYSDvf85X7' },
+          { shipping_rate: 'shr_1MBskDSFYLVvKcyYDzawIbP0' },
+          { shipping_rate: 'shr_1MCKMSSFYLVvKcyYZ0qrcWXx'}
         ],
         line_items: req.body.map((item) => {
           const img = item.image[0].asset._ref;
           const newImage = img.replace('image-', 'https://cdn.sanity.io/images/wgasw74h/production/').replace('-webp', '.webp');
-
           return {
             price_data: { 
-              currency: 'usd',
+              currency: 'inr',
               product_data: { 
                 name: item.name,
                 images: [newImage],
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
           }
         }),
         success_url: `${req.headers.origin}/?success=true`,
-        cancel_url: `${req.headers.origin}/?canceled=true`,
+        cancel_url: `${req.headers.origin}?cancelled=true`,
       }
 
       // Create Checkout Sessions from body params.

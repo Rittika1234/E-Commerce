@@ -19,7 +19,7 @@ const Navbar = () => {
         <span className="cart-item-qty">{totalQuantities}</span>
       </button>
 
-      {showCart && <Cart />}
+      {showCart ?  <Cart /> : null}
     </div>
   )
 }
