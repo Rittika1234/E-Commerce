@@ -10,14 +10,14 @@ const FooterBanner = ({ footerBanner : {discount, largeText1, largeText2,saleTim
       <div className="banner-desc">
         <div className="left">
           <p>{discount}</p>
-          <h3>FINE</h3>
-          <h3>{largeText2}</h3>
+          <h3>Magic</h3>
+          <h3>Sale</h3>
           <p>{saleTime}</p>
         </div>
         <div className="right">
           <p>{smallText}</p>
-          <h3>Summer Sale</h3>
-          <p>Best headphones on the market</p>
+          <h3>Year End Sale</h3>
+          <p>Set your mind ablaze with boAt Rockerz 450</p>
           <Link href={`/product/${product}`}>
            <button type="button">Shop Now</button>
           </Link>
